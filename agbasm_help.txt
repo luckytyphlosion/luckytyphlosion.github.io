@@ -1,0 +1,194 @@
+
+  --agbasm          enable all agbasm features except --agbasm-debug
+ 
+  --agbasm-debug FILE
+                    enable agbasm debug info. Outputs miscellaneous debugging print
+                    statements to the specified file. ("printf debugging")
+ 
+  --agbasm-colonless-labels
+                    enable agbasm colonless labels. This allows defining labels
+                    without a colon at the end if the label is in column
+                    zero and ends with a newline (after optional whitespace).
+                    If the label does not end with a newline, then an error is
+                    thrown and the label is assumed to be a statement.
+ 
+  --agbasm-colon-defined-global-labels
+                    enable agbasm colon defined global labels. This allows setting
+                    a label as global on definition by following the label name
+                    with two colons, as opposed to one (e.g. `label::').
+ 
+  --agbasm-local-labels
+                    enable agbasm local labels. These are like dollar local
+                    labels (as in they go out of scope when a non-local label
+                    is defined), but are not limited to a number as the label
+                    name. An agbasm local label is prefixed (and thus defined)
+                    with `.'. Internally, an agbasm local label is actually
+                    just a concatenation of the most recently defined
+                    non-local label and the local label (including the prefix).
+                    This gives us a safe way to canonicalize local label names
+                    so that they can be exported for debug information. This
+                    also means that local labels can be referenced outside
+                    of their scope by using the canonicalized label name.
+                    Note that agbasm local labels are NOT local symbols by
+                    default.
+ 
+  --agbasm-multiline-macros
+                    enable agbasm multiline macros. This allows the use of
+                    a macro to span across multiple lines, by placing a `['
+                    after the macro name, and then placing a `]' once all
+                    macro arguments have been defined, e.g.
+ 
+                    my_macro [
+                        arg_1=FOO,
+                        arg_2=BAR
+                    ]
+ 
+                    In a multiline macro, the equal sign used in assigning
+                    keyword arguments can substituted with a colon (`:'). Note
+                    that there cannot be whitespace before the colon, but
+                    there can be whitespace after the colon (this behavior also
+                    exists in unmodified gas with the equal sign).
+ 
+                    The opening character (`[') must be defined before any
+                    macro arguments are specified. Arguments can be defined
+                    on the same line as the opening character with optional
+                    whitespace in-between the opening character and the starting
+                    argument, e.g.:
+ 
+                    my_macro [arg_1=FOO,
+                      arg_2=BAR
+                    ]
+ 
+                    The closing character (`]') can be defined in one of
+                    two ways:
+                    - After the last argument, a comma is placed (to indicate
+                      the end of the argument), followed by optional whitespace
+                      and then the closing character, e.g.:
+ 
+                      my_macro [
+                          FOO, ]
+ 
+                    - On a single line by itself (supposedly after the last
+                      argument has been defined) with no non-whitespace characters
+                      before or after it, e.g.:
+ 
+                      my_macro [
+                          FOO
+                      ]
+ 
+                    Note that the first method **requires** a comma before the
+                    closing character, while the second method does not require
+                    the closing character. This is due to the inherent design
+                    of how macro arguments are parsed, which may be explained
+                    here in the future.
+ 
+                    A comma should be inserted after the last argument for each
+                    line (except as mentioned above in the second closing character
+                    method), otherwise a warning is generated. It is
+                    recommended to not ignore these warnings as they can
+                    be an indicator of a missing closing character, as most
+                    directives do not end with a comma.
+ 
+  --agbasm-charmap
+                    enable agbasm charmap. This allows specifying characters in
+                    strings to map to custom values, as opposed to the values of
+                    the encoding used. The .charmap macro is used to specify a
+                    mapping. For example:
+ 
+                        .charmap "A", 0x20
+                        .string "A"
+ 
+                    will output a value of 0x20. Input patterns for .charmap are
+                    not restricted to a single byte, rather, the input
+                    pattern can be as long as possible. The way that input patterns
+                    are detected is that it will try to find the longest defined
+                    pattern at the current point in the string. For example:
+ 
+                        .charmap "d", 1
+                        .charmap "o", 2
+                        .charmap "n", 3
+                        .charmap "'", 4
+                        .charmap "t", 5
+                        .charmap "'t", 6
+                        .string "don't"
+ 
+                    would output `1, 2, 3, 6', instead of `1, 2, 3, 4, 5'.
+                    A more complex example:
+ 
+                        .charmap "B", 1
+                        .charmap "A", 2
+                        .charmap "N", 3
+                        .charmap "BAN", 4
+                        .charmap "BANANA", 5
+                        .charmap "ANA", 6
+                        .string "BANAN"
+                    would output `4, 2, 3'.
+ 
+                    The size of the output value for a .charmap can be longer than one byte.
+                    There are two ways to do this. The first is to specify a list of bytes
+                    as the output values. For example:
+ 
+                        .charmap "C", 0x20, 0x21, 0x22
+                        .string "C"
+ 
+                    will output `0x20, 0x21, 0x22'. The second is to specify a single value
+                    which can be at most 4 bytes long. This value is interpreted as variable
+                    width, as in leading zeroes are ignored. For example, if the value is less
+                    than 0x100, only one byte is output. If the value is less than 0x10000,
+                    only two bytes are output. If the value less than 0x1000000, only three bytes
+                    are output, otherwise, four bytes are output. The bytes output are big-endian
+                    regardless of the endianness of the system, as this is merely a convenience
+                    method for the first method. The output value can be up to seven bytes long.
+                    Zero as any of the bytes of an output value is acceptable.
+ 
+                    As .string is now used for agbasm charmap, .ascizN directives have been
+                    created to replicate the behavior of the original .stringN directives.
+                    .ascizN directives are not enabled if agbasm charmap is not enabled.
+ 
+                    Internally, agbasm charmaps are represented as a tree structure. They have
+                    been designed to have O(n) performance when parsing a string, while being
+                    as memory efficient as possible: A .charmap entry with n characters would
+                    take up 256*n + 8 bytes for the worst case on a 64-bit machine.
+                    The way the above "BANAN" example would be parsed would be approximately
+                        - Recognize B as a potential match and save it as the
+                          last match
+                        - Parse BA, has no match
+                        - Recognize BAN as a potential match and save it
+                        - Parse BANA, has no match
+                        - Parse BANAN, has no match
+                        - Reached end of string, output the value of the last match
+                          which is `BAN', and set the input pointer to the end of the
+                          last match, which is after 'BAN`
+                        - Recognize A as a potential patch and save it
+                        - Parse AN, has no match
+                        - Reached end of string, output the value of `A' and set the
+                          input pointer to the end of `A'
+                        - Recognize N as a potential match and save it
+                        - Reached end of string, output the value of `N' and stop
+                          parsing
+ 
+  --agbasm-no-gba-thumb-after-label-disasm-fix
+                    When viewing an .elf file in no$gba's disassembler, if one or more
+                    Thumb opcodes exist in memory, and a label is declared after the
+                    Thumb opcodes, no$gba will interpret subsequent Thumb opcodes after
+                    the label as arm, even though the opcodes afterwards are Thumb. This
+                    is due to (presumably) how no$gba reads the elf file to determine which
+                    opcodes are thumb and which opcodes are arm. What presumably happens is
+                    that no$gba reads the elf's symbol table. Within the symbol table, there
+                    are also special mapping symbols, which indicate whether data at the
+                    address of the mapping symbol is a sequence of ARM opcodes ($a), a
+                    sequence of Thumb opcodes ($t), or a sequence of data items ($d). For
+                    example, if there is a $t symbol with address 0x8000000, this tells no$gba
+                    that address 0x8000000 is the start of a sequence of Thumb opcodes, and
+                    thus no$gba's disassembler will output Thumb opcodes until it encounters
+                    another mapping symbol. However, if a symbol that is not a mapping symbol
+                    is encountered, no$gba will switch to outputting arm opcodes by default.
+                    This becomes an issue as when a function emits a label, any code after
+                    the label will be viewed incorrectly as ARM opcodes in no$gba's
+                    disassembler. This flag aims to workaround this behavior, by having
+                    the assembler clobber the current mapping state, so that it will
+                    output another mapping symbol after the label, and thus no$gba will
+                    output the correct type of data in the disassembler after a label.
+ 
+  --agbasm-help     show this message and exit
+ 
