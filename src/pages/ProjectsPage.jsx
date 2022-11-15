@@ -1,10 +1,12 @@
 import React, { Suspense } from "react";
+import AnalyzeSourceProj from "../projects/AnalyzeSourceProj";
+import "../projects.css";
 
 class ProjectsPage extends React.Component {
   constructor(props) {
     super(props);
     let state = {
-      curProject: ""
+      curProject: <AnalyzeSourceProj/>
     };
     this.state = state;
     this.setProjectView = this.setProjectView.bind(this);

@@ -1,0 +1,12 @@
+html {
+	background-color: #E7E9EB;
+}
+
+#app-content {
+	margin: auto;
+	max-width: 50%;
+	border: 1px solid #E7E9EB;
+	background-color: white;
+	padding: 10px;
+	min-height: calc(100vh - 50px);
+}
