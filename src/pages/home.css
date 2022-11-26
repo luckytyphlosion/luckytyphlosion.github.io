@@ -1,16 +1,6 @@
 
-.project-header {
-	font-family: "Roboto", "Trebuchet MS", sans-serif;
-	font-weight: bold;
-}
-
-.project-description {
+.home-page-body {
 	/*font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;*/
 	font-family: "Roboto", "Trebuchet MS", sans-serif;
 	font-size: 14px;
-}
-
-#project-buttons {
-	display: flex;
-	justify-content: space-evenly;
 }
