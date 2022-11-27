@@ -1,6 +1,6 @@
 import React, { Suspense } from "react";
 import AnalyzeSourceProj from "../projects/AnalyzeSourceProj";
-import "../projects.css";
+import "../Projects.css";
 
 class ProjectsPage extends React.Component {
   constructor(props) {

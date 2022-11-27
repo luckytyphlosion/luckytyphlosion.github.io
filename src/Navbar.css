@@ -2,4 +2,12 @@
 	display: flex;
 	justify-content: space-evenly;
 	font-family: "Roboto", "Trebuchet MS", sans-serif;
+	background-color: white;
+	position: sticky;
+	top: 0;
+	-moz-box-shadow: 5px 5px 5px rgba(0,0,0,0.3);
+	-webkit-box-shadow: 5px 5px 5px rgba(0,0,0,0.3);
+	box-shadow: 5px 5px 5px rgba(0,0,0,0.3);
+		max-width: 65%;
+	margin: auto;
 }

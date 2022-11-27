@@ -2,12 +2,10 @@ html {
 	background-color: #E7E9EB;
 }
 
+body {
+	margin: 0px 0px 8px 0px;
+}
+
 #app-content {
-	border-radius: 25px;
-	margin: auto;
-	max-width: 65%;
-	border: 1px solid #E7E9EB;
-	background-color: white;
-	padding: 30px;
-	min-height: calc(100vh - 50px);
+
 }

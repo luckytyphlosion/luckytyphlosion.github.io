@@ -1,0 +1,11 @@
+
+#main-content {
+	border-radius: 25px;
+	border: 1px solid #E7E9EB;
+	background-color: white;
+	padding: 10px 30px 30px 30px;
+	min-height: calc(100vh - 50px);	
+	max-width: 65%;
+	margin: auto;
+	margin-top: 10px;
+}

@@ -13,7 +13,7 @@ function AutoTTRecorderProj() {
         <p>The program has seen use on channels that upload Mario Kart Wii time trials, such as <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/channel/UCxCPLtXIg43HRP6QZN8gyYQ">CTGP Records</a>, <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/c/200ccCTGPRecords">200cc CTGP Records</a>, and <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/c/CTGPKartRecords">CTGP Kart Records</a>.</p>
         <p>Various features were added into the program, such as:</p>
         <ul>
-          <li>The ability to record ghosts from the <a target="_blank" rel="noopener noreferrer" target="_blank" rel="noopener noreferrer" href="https://chadsoft.co.uk/time-trials/">CTGP Revolution Ghost Database</a>, by supplying a link to the ghost from the Ghost Database website</li>
+          <li>The ability to record ghosts from the <a target="_blank" rel="noopener noreferrer" href="https://chadsoft.co.uk/time-trials/">CTGP Revolution Ghost Database</a>, by supplying a link to the ghost from the Ghost Database website</li>
           <li>Automatic track downloading from <a target="_blank" rel="noopener noreferrer" href="https://ct.wiimm.de/">Wiimm’s custom track archive</a></li>
           <li>Simple editing options, such as the ability to show an in-game top 10 screen before the replay</li>
           <li>The ability to add custom music to the video</li>
