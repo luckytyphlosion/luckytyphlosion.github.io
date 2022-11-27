@@ -8,3 +8,14 @@
 	src: local("Roboto"), url("./roboto/Roboto-Bold.ttf") format("truetype");
 	font-weight: bold;
 }
+
+@font-face {
+	font-family: "Titillium";
+	src: local("Titillium"), url("./titillium/TitilliumWeb-1eq2.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: "Titillium";
+	src: local("Titillium"), url("./titillium/TitilliumWebbold-B1nd.ttf") format("truetype");
+	font-weight: bold;
+}

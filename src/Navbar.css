@@ -1,13 +1,16 @@
-#navbar {
-	display: flex;
-	justify-content: space-evenly;
-	font-family: "Roboto", "Trebuchet MS", sans-serif;
+#navbar-container {
 	background-color: white;
 	position: sticky;
 	top: 0;
-	-moz-box-shadow: 5px 5px 5px rgba(0,0,0,0.3);
-	-webkit-box-shadow: 5px 5px 5px rgba(0,0,0,0.3);
-	box-shadow: 5px 5px 5px rgba(0,0,0,0.3);
-		max-width: 65%;
+	-moz-box-shadow: 3px 3px 3px rgba(0,0,0,0.3);
+	-webkit-box-shadow: 3px 3px 3px rgba(0,0,0,0.3);
+	box-shadow: 3px 3px 3px rgba(0,0,0,0.3);
+}
+
+#navbar-content {
+	font-family: "Roboto", "Trebuchet MS", sans-serif;
+	display: flex;
+	justify-content: space-evenly;
+	max-width: 65%;
 	margin: auto;
 }

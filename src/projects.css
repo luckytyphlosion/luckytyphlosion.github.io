@@ -1,13 +1,13 @@
 
 .project-header {
-	font-family: "Roboto", "Trebuchet MS", sans-serif;
+	font-family: "Titillium", "Trebuchet MS", sans-serif;
 	font-weight: bold;
 }
 
 .project-description {
 	/*font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;*/
-	font-family: "Roboto", "Trebuchet MS", sans-serif;
-	font-size: 14px;
+	font-family: "Titillium", "Trebuchet MS", sans-serif;
+	font-size: 16px;
 }
 
 #project-buttons {
