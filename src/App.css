@@ -1,9 +1,18 @@
 html {
-	background-color: #E7E9EB;
+	/*background-color: #E7E9EB;*/
+	/* 215, 255, 241 */
+	/* other possibilities:
+	#465362
+	*/
+	background-color: #1948B5;
+	
 }
 
 body {
 	margin: 0px 0px 8px 0px;
+	/*background-image: linear-gradient(#1948B5, #465362);
+	background-repeat: no-repeat;
+	background-attachment: fixed;*/
 }
 
 #app-content {
