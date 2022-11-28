@@ -8,7 +8,6 @@ function Navbar() {
       <div id="navbar-content">
         <Link to="/">Home</Link>
         <Link to="/projects">Projects</Link>
-        <Link to="/about">About</Link>
       </div>
     </div>
   );

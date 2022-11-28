@@ -5,7 +5,7 @@ import ExpandableImage from "../components/ExpandableImage";
 function AnalyzeSourceProj() {
   return (
     <div className="project-content">
-      <h1 className="project-header">analyze-source</h1>
+      <h2 className="project-header">analyze-source</h2>
       <div className="project-description">
         <ExpandableImage width="50%" src={analyzeSourceDemoPng} alt="Sample output of analyze-source"/> 
         <p><a target="_blank" rel="noopener noreferrer" href="https://github.com/dism-exe/bn6f/tree/master/tools/analyze_source">GitHub link</a></p>

@@ -22,6 +22,7 @@ class ProjectsPage extends React.Component {
   render() {
     return (
       <div>
+        <h1 className="project-page-header">Projects</h1>
         <div id="project-buttons">
           <button className="project-button" onClick={this.setProjectView} value="AnalyzeSourceProj">analyze-source</button>
           <button className="project-button" onClick={this.setProjectView} value="GnuAssemblerProj">agbasm (GNU Assembler Modifications)</button>

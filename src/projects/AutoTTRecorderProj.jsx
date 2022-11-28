@@ -3,7 +3,7 @@ import React from 'react';
 function AutoTTRecorderProj() {
   return (
     <div className="project-content">
-      <h1 className="project-header">Auto-TT-Recorder</h1>
+      <h2 className="project-header">Auto-TT-Recorder</h2>
       <div className="project-description">
         <iframe width="560" height="315" src="https://www.youtube.com/embed/pDp-LCe_dbg" title="YouTube video player" style={{border: 0}} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
         

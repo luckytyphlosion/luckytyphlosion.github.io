@@ -5,7 +5,7 @@ import ExpandableImage from "../components/ExpandableImage";
 function AutoTTRecorderGUIProj() {
   return (
     <div className="project-content">
-      <h1 className="project-header">Auto-TT-Recorder GUI</h1>
+      <h2 className="project-header">Auto-TT-Recorder GUI</h2>
       <div className="project-description">
         <ExpandableImage width="50%" fullWidth="80%" src={autoTTRecGUIWindowPng} alt="Screenshot of auto-tt-recorder-gui"/>
         <p><a target="_blank" rel="noopener noreferrer" href="https://github.com/luckytyphlosion/auto-tt-recorder-gui">GitHub link</a></p>

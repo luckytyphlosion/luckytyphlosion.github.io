@@ -3,7 +3,7 @@ import React from 'react';
 function AutoTTRecorderYTProj() {
   return (
     <div className="project-content">
-      <h1 className="project-header">CTGP Legacy Records</h1>
+      <h2 className="project-header">CTGP Legacy Records</h1>
       <div className="project-description">
         <iframe width="560" height="315" src="https://www.youtube.com/embed/_nM24kyCty0" title="YouTube video player" style={{border: 0}} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
         <p><a target="_blank" rel="noopener noreferrer" href="https://github.com/luckytyphlosion/auto-tt-recorder">GitHub link</a></p>
