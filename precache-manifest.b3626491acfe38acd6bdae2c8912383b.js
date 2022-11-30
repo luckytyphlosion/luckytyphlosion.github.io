@@ -24,12 +24,12 @@ self.__precacheManifest = [
     "url": "/static/js/3.3500c210.chunk.js"
   },
   {
-    "revision": "fc51a60c638eb6dc3dff",
+    "revision": "51301878e2535de1abea",
     "url": "/static/css/main.29d7ca35.chunk.css"
   },
   {
-    "revision": "fc51a60c638eb6dc3dff",
-    "url": "/static/js/main.fc51a60c.chunk.js"
+    "revision": "51301878e2535de1abea",
+    "url": "/static/js/main.51301878.chunk.js"
   },
   {
     "revision": "cbbd170bc6acc00b051b",
@@ -48,12 +48,12 @@ self.__precacheManifest = [
     "url": "/static/media/TitilliumWeb-1eq2.2050f7eb.ttf"
   },
   {
-    "revision": "b8e42971dec8d49207a8c8e2b919a6ac",
-    "url": "/static/media/Roboto-Bold.b8e42971.ttf"
-  },
-  {
     "revision": "8a36205bd9b83e03af0591a004bc97f4",
     "url": "/static/media/Roboto-Regular.8a36205b.ttf"
+  },
+  {
+    "revision": "b8e42971dec8d49207a8c8e2b919a6ac",
+    "url": "/static/media/Roboto-Bold.b8e42971.ttf"
   },
   {
     "revision": "26660386509f59e1de703d712de62fa1",
@@ -68,7 +68,7 @@ self.__precacheManifest = [
     "url": "/static/media/agbasm_help.9d636737.txt"
   },
   {
-    "revision": "028fda76432b75ca5e50662949141f92",
+    "revision": "c61486001c19231d1f1c078039e31f69",
     "url": "/index.html"
   }
 ];
