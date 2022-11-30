@@ -31,7 +31,7 @@ class ProjectsPage extends React.Component {
           <button className="project-button" onClick={this.setProjectView} value="GnuAssemblerProj">agbasm (GNU Assembler Modifications)</button>
         </div>
         <div id="project-view">
-          <Suspense fallback={<div>Loading...</div>}>{this.state.curProject}</Suspense>
+          <Suspense>{this.state.curProject}</Suspense>
         </div>
       </div>
     );
