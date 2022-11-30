@@ -2,11 +2,14 @@
 .project-page-header {
 	font-family: "Titillium", "Trebuchet MS", sans-serif;
 	font-weight: bold;
+	color: #222222;
+	text-align: center;
 }
 
 .project-header {
 	font-family: "Titillium", "Trebuchet MS", sans-serif;
 	font-weight: bold;
+	color: #222222;
 }
 
 .project-description {
@@ -19,5 +22,26 @@
 #project-buttons {
 	display: flex;
 	justify-content: space-evenly;
-	padding: 1em 30px 0px 30px;
+	padding: 0px 30px 0px 30px;
+}
+
+.project-button {
+	border-radius: 5px;
+	/* #EEEEEE rgb(118, 118, 118) */
+	border: 1px solid #EEEEEE;
+	font-family: "Roboto";
+	font-weight: bold;
+	font-size: 14px;
+	/* #23CE6B #DA3E52 #82D173; #169873 #36FFC6 #00FF80 #1D7EB5 #68A65B #4BA638 #5ED147 */
+	/* rgb(239, 239, 239) #41693A */
+	background-color: #82D173;
+	color: white;
+	padding: 6px 10px;
+	margin: 0px 5px 0px 5px;
+	cursor: pointer;
+}
+
+.project-button:hover {
+	background-color: #54874A;
+	transition-duration: 0.2s;
 }

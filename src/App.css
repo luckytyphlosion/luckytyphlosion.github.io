@@ -4,8 +4,6 @@ html {
 	/* other possibilities:
 	#465362
 	*/
-	background-color: #1948B5;
-	
 }
 
 body {
@@ -13,6 +11,8 @@ body {
 	/*background-image: linear-gradient(#1948B5, #465362);
 	background-repeat: no-repeat;
 	background-attachment: fixed;*/
+	/* #324673 #365CB5  #143FA3 #2F4C91  #324673*/
+	background-color: #1948B5  /**/;
 }
 
 #app-content {

@@ -2,10 +2,13 @@
 .home-page-header {
 	font-family: "Titillium", "Trebuchet MS", sans-serif;
 	font-weight: bold;
+	color: #222222;
+	text-align: center;
 }
 
 .home-page-content {
 	/*font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;*/
 	font-family: "Titillium", "Trebuchet MS", sans-serif;
 	font-size: 16px;
+	color: #555555;
 }

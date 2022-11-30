@@ -2,6 +2,7 @@
 #main-content {
 	border-radius: 25px;
 	border: 1px solid #E7E9EB;
+	/* #A6D4FF*/
 	background-color: #E8F4FF;
 	padding: 10px 30px 30px 30px;
 	min-height: calc(100vh - 100px);
