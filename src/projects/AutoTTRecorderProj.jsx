@@ -9,7 +9,7 @@ function AutoTTRecorderProj() {
         
         <p><a target="_blank" rel="noopener noreferrer" href="https://github.com/luckytyphlosion/auto-tt-recorder">GitHub link</a></p>
         
-        <p>Between 2021 and 2022, I created a command line tool called Auto-TT-Recorder to automatically record (as a video) single player races or “Time Trials” of Mario Kart Wii using the game’s built-in replay feature. Python was used for the main program logic, a Wii emulator named <a href="https://dolphin-emu.org/">Dolphin</a> was used to run the Mario Kart Wii ISO, and FFmpeg was used to encode the resulting video.</p>
+        <p>Between 2021 and 2022, I created a command line tool called Auto-TT-Recorder to automatically record (as a video) single player races or “Time Trials” of Mario Kart Wii using the game’s built-in replay feature. Python was used for the main program logic, a Wii emulator named <a target="_blank" rel="noopener noreferrer" href="https://dolphin-emu.org/">Dolphin</a> was used to run the Mario Kart Wii ISO, and FFmpeg was used to encode the resulting video.</p>
         <p>The program has seen use on channels that upload Mario Kart Wii time trials, such as <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/channel/UCxCPLtXIg43HRP6QZN8gyYQ">CTGP Records</a>, <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/c/200ccCTGPRecords">200cc CTGP Records</a>, and <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/c/CTGPKartRecords">CTGP Kart Records</a>.</p>
         <p>Various features were added into the program, such as:</p>
         <ul>
